@@ -466,7 +466,9 @@ img.emoji {
     visibility: hidden;
     display: none;
 }
-
+iframe{
+    width: calc(50vh)
+}
 /* Creates a responsive wrapper that makes our content scale nicely */
 .inner {
     position: relative;
