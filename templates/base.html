@@ -80,11 +80,7 @@
     <meta itemprop="inLanguage" content="{{ DEFAULT_LANG }}">
     {% include 'navigation.html' %}
     <div class="site-wrapper">
-<<<<<<< HEAD
-        <header class="main-header post-head" style="background-image: url({{ SITEURL }}/theme/images/{% if article %}bear.jpg{% else %}banner-bg.jpg{% endif %})" itemscope itemtype="http://schema.org/WPHeader">
-=======
         <header class="main-header {% block header_type %}post-head{% endblock %}" style="background-image: url('{{ SITEURL }}/{% block header_image %}{{ DEFAULT_HEADER_IMAGE }}{% endblock %}');" itemscope itemtype="http://schema.org/WPHeader">
->>>>>>> 0320e0f8929a0596e527f02b10104c25763615cf
             <nav class="main-nav overlay clearfix">
                 {% if SITE_LOGO %}
                 <a href="{{ SITEURL }}/index.html" class="blog-logo">
