@@ -61,7 +61,7 @@
     <meta property="og:site_name" content="{{ SITENAME }}">
     <meta property="og:locale" content="{{ DEFAULT_LANG }}">
     {% if article %}
-    <link rel="canonical" href="{{ article.url }}">
+    <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ article.title|striptags }}">
     <meta property="og:url" content="{{ article.url }}">
@@ -86,7 +86,7 @@
     <meta property="article:author" content="{{ article.author }}">
     {% endif %}
     {% elif page %}
-    <link rel="canonical" href="{{ page.url }}">
+    <link rel="canonical" href="{{ SITEURL }}/{{ page.url }}">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ page.title }}">
     <meta property="og:url" content="{{ page.url }}">
