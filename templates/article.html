@@ -6,13 +6,13 @@
 {% block content %}
 <main id="content" class="content" role="main">
     <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-        <header class="post-header">
+<!--        <header class="post-header">
             <h1 class="post-title" itemprop="headline">{{ article.title|striptags }}</h1>
             <section class="post-meta">
                 <time class="post-date" itemprop="datePublished" datetime="{{ article.date|strftime('%YYYY-%MM-%DD') }}">{{ article.date|strftime('%A, %B %d, %Y') }}</time>
                 on {% for tag in article.tags %}<a href="{{ tag.url }}">{{ tag.name | title }}{% if not loop.last %}, {% endif %}</a>{% endfor %}
             </section>
-        </header>
+        </header>-->
         <section class="post-content">
             {{ article.content }}
             <div>
@@ -35,11 +35,11 @@
             </figure>
             <section class="author">
                 <h4>
-                    <a href="{{ article.author.url }}">{{ article.author.name }}</a>
+                    <a href="{{ article.author.url }}">{% if article.author %}{{ article.author }}{% else %}{{ AUTHOR }}{% endif %}</a>
                 </h4>
                 <p>{% if article.author_bio %}{{ article.author_bio }}{% else %}{{ AUTHOR_BIO }}{% endif %}</p>
                 <div class="author-meta">
-                    <span class="author-location icon-location">{% if article.location %}{{ article.location }}{% else %}{{ AUTHOR_LOCATION }}{% endif %}</span>
+                    <span class="author-location icon-location">{% if article.author_location %}{{ article.author_location }}{% else %}{{ AUTHOR_LOCATION }}{% endif %}</span>
                     {% if article.author_url %}<span class="author-link icon-link"><a href="{{ article.author_url }}">{{ article.author_url }}</a></span>{% endif %}
                 </div>
             </section>
