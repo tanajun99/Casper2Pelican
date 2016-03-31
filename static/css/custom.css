@@ -11,6 +11,7 @@
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    color: tomato;
 }
 .read-next {
     display: -webkit-box;
