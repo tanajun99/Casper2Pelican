@@ -16,6 +16,6 @@
         {% endfor %}
             <li class="{% if current_url == '/archives' %}nav-current{% endif %}" role="presentation"><a  href="{{ SITEURL }}/archives.html" title="{{ SITENAME }} | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>
     </ul>
-    {% if FEED_RSS %}<a class="subscribe-button icon-feed" href='/{{ FEED_RSS }}'  target='blank'>Subscribe</a>{% endif %}
+    {% if FEED_RSS %}<a class="subscribe-button icon-feed" href='{{ SITEURL }}/{{ FEED_ALL_ATOM }}'  target='blank'>Subscribe</a>{% endif %}
 </nav>
 <span class="nav-cover"></span>

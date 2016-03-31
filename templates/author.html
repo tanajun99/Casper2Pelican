@@ -8,7 +8,7 @@
 <section class="author-profile inner">
     <figure class="author-image">
         {% for article in articles_page.object_list %}
-        <div class="img" style="background-image: url('{% if article.author_pic_url %}{{ article.author_pic_url }}{% else %}{{ SITEURL }}/{{ AUTHOR_PIC_URL }}{% endif %}')"><span class="hidden">{{ author.name }}'s Picture</span></div>
+        <div class="img" style="background-image: url('{% if article.author_pic_url %}{{ article.author_pic_url }}{% else %}{{ AUTHOR_PIC_URL }}{% endif %}')"><span class="hidden">{{ author.name }}'s Picture</span></div>
     </figure>
     {% endfor %}
     <h1 class="author-title">{{ author.name }}</h1>
@@ -36,7 +36,7 @@
             <a class="read-more" itemprop="url" href="{{ SITEURL }}/{{ article.url}}" title="Read this article" rel="bookmark"> &raquo;</a>
         </section>
         <footer class="post-meta">
-            <img class="author-thumb" src="{% if article.author_pic_url %}{{ article.author_pic_url }}{% else %}{{ SITEURL }}/{{ AUTHOR_PIC_URL }}{% endif %}" alt="{{ article.author }}" nopin="nopin">
+            <img class="author-thumb" src="{% if article.author_pic_url %}{{ article.author_pic_url }}{% else %}{{ AUTHOR_PIC_URL }}{% endif %}" alt="{{ article.author }}" nopin="nopin">
             <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a> on {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag.name | title }}{% if not loop.last %}, {% endif %}</a>{% endfor %}
             <time class="post-date" itemprop="datePublished" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
         </footer>
