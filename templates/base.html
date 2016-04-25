@@ -114,7 +114,7 @@
         {% endif %}
         <script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', '{{ GOOGLE_ANALYTICS }}', 'auto');ga('send', 'pageview');var _qevents = _qevents || [];setTimeout(function() { window.onscroll = function() { window.onscroll = null;
         ga('send','event','Ajuste de Tasa de Rebote','Scroll despues de 5 segundos');}}, 5000);</script>
-        <script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
+        <script src="//twemoji.maxcdn.com/2/twemoji.min.js"></script>
     </head>
     <body class="{% block template_type %}home-template{% endblock %} nav-closed" itemscope itemtype="http://schema.org/WebPage">
         <meta itemprop="name" content="{{ SITENAME }}">
@@ -126,17 +126,6 @@
         {% include 'navigation.html' %}
         <div class="site-wrapper">
             <header class="main-header post-head" style="background-image: url('{{ SITEURL }}/{% block header_image %}{{ DEFAULT_HEADER_IMAGE }}{% endblock %}');" itemscope itemtype="http://schema.org/WPHeader">
-                {% if article %}
-                <div class="vertical">
-                    <div class="main-header-content inner">
-                        <h1 class="page-title" itemprop="headline">{{ article.title|striptags }}</h1>
-                        <section class="post-meta">
-                            <time class="post-date" itemprop="datePublished" datetime="{{ article.date|strftime('%YYYY-%MM-%DD') }}">{{ article.date|strftime('%A, %B %d, %Y') }}</time>
-                            on {% for tag in article.tags %}<a href="{{ tag.url }}">{{ tag.name | title }}{% if not loop.last %}, {% endif %}</a>{% endfor %}
-                        </section>
-                    </div>
-                </div>
-                {% endif %}
                 <nav class="main-nav overlay clearfix">
                     <a class="menu-button" href="#">
                         <span class="burger">&#9776;</span>
