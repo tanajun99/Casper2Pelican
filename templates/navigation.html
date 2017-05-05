@@ -8,6 +8,9 @@
         {% if archives %}{% set current_url = '/archives' %}{% endif %}
         {% if page %}{% set current_url = page.url %}{% endif %}
         <li class="{% if current_url == '/' %}nav-current{% endif %}" role="presentation"><a  href="{{ SITEURL }}/index.html" title="{{ SITENAME }}" itemprop="name" itemprop="significantLink">Home</a></li>
+        {%- for author, articles in authors|sort %}
+        <li class="{% if current_url == '/' %}nav-current{% endif %}" role="presentation"><a  href="{{ SITEURL }}/{{ author.url }}" title="{{ SITENAME }}" itemprop="name" itemprop="significantLink">About Me</a></li>
+        {% endfor %}
         {% for p in PAGES %}
             <li class="{% if current_url == p.url %}nav-current{% endif %}" role="presentation"><a  href="{{ SITEURL }}/{{ p.url }}" title="{{ SITENAME }} |{{ p.title }}" itemprop="name" itemprop="significantLink">{{ p.title }}</a></li>
         {% endfor %}
@@ -16,6 +19,26 @@
         {% endfor %}
             <li class="{% if current_url == '/archives' %}nav-current{% endif %}" role="presentation"><a  href="{{ SITEURL }}/archives.html" title="{{ SITENAME }} | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>
     </ul>
+
+    <a class="subscribe-button-twitter" href="https://twitter.com/tanajun99" target="blank" >
+      <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+    </a>
+    <a class="subscribe-button-facebook" href="https://www.facebook.com/junya.tanaka.942" target="blank" >
+      <i class="fa fa-facebook fa-5x" aria-hidden="true"></i>
+    </a>
+    <a class="subscribe-button-insta" href="https://www.instagram.com/tanajun99/" target="blank">
+      <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+    </a>
+    <a class="subscribe-button-google" href="mailto:tanajun.99@gmail.com" target="blank">
+      <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+    </a>
+    <a class="subscribe-button-github" href="https://github.com/tanajun99" target="blank">
+      <i class="fa fa-github fa-5x" aria-hidden="true"></i>
+    </a>
+    <a class="subscribe-button-linkedin" href="https://www.linkedin.com/in/tanajun99" target="blank">
+      <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+    </a>
+
     {% if FEED_RSS %}<a class="subscribe-button icon-feed" href='{{ SITEURL }}/{{ FEED_ALL_ATOM }}'  target='blank'>Subscribe</a>{% endif %}
 </nav>
 <span class="nav-cover"></span>

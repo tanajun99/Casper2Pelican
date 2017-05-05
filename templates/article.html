@@ -20,13 +20,12 @@
                 <h4>
                     <a href="{{ article.author.url }}">{% if article.author %}{{ article.author }}{% else %}{{ AUTHOR }}{% endif %}</a>
                 </h4>
-                <p>{% if article.author_bio %}{{ article.author_bio }}{% else %}{{ AUTHOR_BIO }}{% endif %}</p>
                 <div class="author-meta">
                     <span class="author-location icon-location">{% if article.author_location %}{{ article.author_location }}{% else %}{{ AUTHOR_LOCATION }}{% endif %}</span> {% if article.author_url %}<span class="author-link icon-link"><a href="{{ article.author_url }}">{{ article.author_url }}</a></span>{%
                     endif %}
                 </div>
             </section>
-            <section class="share">
+            <!-- <section class="share">
                 <h4>Share this post</h4>
                 <a class="icon-twitter" href="https://twitter.com/share?text={{ article.title | urlencode | replace(' ', '%20') | truncate(60) }}{{ ' via @' | urlencode }}{{ TWITTER_USERNAME }}&amp;url={{ SITEURL }}/{{ article.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
@@ -37,7 +36,7 @@
                 <a class="icon-google-plus" href="https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
-            </section>
+            </section> -->
             {% if DISQUS_SITENAME %} {% include 'coments.html' %} {% endif %}
         </footer>
     </article>
